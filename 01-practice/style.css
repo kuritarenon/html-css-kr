@@ -27,11 +27,13 @@ h1 {
     line-height: 1;
     font-size: 40px;
     font-weight: bold;
+    text-align: center;
 }
 
 h2 {
     font-size: 36px;
     line-height: 1.2;
+    text-align: center;
 }
 
 h2::after {
@@ -42,23 +44,45 @@ h2::after {
     border-top: 1px solid #1E1E1E;
 }
 
+p {
+    text-align: left;
+}
+
+a {
+    padding: 6px 12px;
+    color: #1E1E1E;
+    background-color: #F5F5F5;
+    text-decoration: none;
+}
+
 header {
     margin-bottom: 100px;
 }
 
 article {
-    margin-bottom: 100px;
+    padding: 100px;
 }
 
 article.first-class {
     border-bottom: 1px solid #DDDDDD;
+    padding-bottom: 50px;
+}
 
+.first-class img {
+    position: relative;
+}
+
+.posts {
+    display: grid;
+    grid-template-columns: repeat(2 1fr);
+    justify-content: center;
 }
 
 footer {
     padding: 100px 0;
     color: #FFFFFF;
     background-color: #1E1E1E;
+    text-align: center;
 }
 
 
