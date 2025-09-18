@@ -1,0 +1,65 @@
+@charset "utf-8";
+
+body {
+    color: #000000;
+    background-color: #FFFFFF;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    line-height: 1.7;
+    font-family: "Times New Roman", "YuMincho", "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+.inner {
+    width: 86%;
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    margin: 40px 0;
+    line-height: 1;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 36px;
+    line-height: 1.2;
+}
+
+h2::after {
+    content: "";
+    display: block;
+    width: 100px;
+    margin: 20px auto 0;
+    border-top: 1px solid #1E1E1E;
+}
+
+header {
+    margin-bottom: 100px;
+}
+
+article {
+    margin-bottom: 100px;
+}
+
+article.first-class {
+    border-bottom: 1px solid #DDDDDD;
+
+}
+
+footer {
+    padding: 100px 0;
+    color: #FFFFFF;
+    background-color: #1E1E1E;
+}
+
+
+@media (width<640px) {}
