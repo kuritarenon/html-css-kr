@@ -1,1 +1,153 @@
 @charset "utf-8";
+
+body {
+    color: #888888;
+    background-color: #FFFFFF;
+    font-size: 14px;
+    line-height: 1.7;
+    letter-spacing: 0;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
+}
+
+/* common
+----------------------------------- */
+/* header */
+
+.header {
+    padding-top: 30px;
+    text-align: center;
+}
+
+.header__inner {
+    max-width: 800px;
+    width: 80%;
+    margin: auto;
+}
+
+/* footer */
+.footer {
+    padding-top: 100px;
+    padding-bottom: 40px;
+    color: #BBBBBB;
+    background-color: #202124;
+}
+
+.footer__inner {
+    max-width: 800px;
+    width: 80%;
+    margin: auto;
+}
+
+.footer__copy {
+    font-size: 12px;
+}
+
+.btn {
+    display: block;
+    width: 160px;
+    margin-top: 25px;
+    padding: 15px 0;
+    color: #FFFFFF;
+    background-color: #FA6980;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.6;
+}
+
+/* unit */
+.unit__catch {
+    margin-bottom: 10px;
+    color: #FA6980;
+    font-size: 12px;
+    line-height: 1.6;
+    font-weight: Oblique;
+}
+
+.unit__title {
+    margin-bottom: 15px;
+    color: #202124;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.unit__text {
+    margin-bottom: 20px;
+}
+
+/* card */
+.card {
+    padding-bottom: 35px;
+    background-color: #FFFFFF;
+}
+
+.card__img {
+    margin-bottom: 35px;
+}
+
+.card__title {
+    margin-bottom: 15px;
+    color: #202124;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.card__text {
+    margin-bottom: 25px;
+}
+
+.subtitle {
+    margin-bottom: 30px;
+    color: #202124;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+/* index.html
+----------------------------------- */
+/* news */
+
+.news {
+    padding: 60px 0;
+}
+
+.news__inner {
+    max-width: 800px;
+    width: 80%;
+    margin: auto;
+}
+
+.news__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    column-gap: 40px;
+    row-gap: 60px;
+}
+
+/* trend */
+.trend {
+    padding: 60px 0;
+    background-color: #F6F6F6;
+}
+
+.trend__inner {
+    max-width: 800px;
+    width: 80%;
+    margin: auto;
+}
+
+.trend__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 40px;
+}
