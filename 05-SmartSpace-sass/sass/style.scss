@@ -1,0 +1,221 @@
+@use 'sass:math';
+$color-text: #31353B;
+$color-main: #FF9900;
+$color-accent: #F85A47;
+$color-heading: #000;
+$color-bg: #DBFFFF;
+
+$font-family-base: Helvetica, Arial, sans-serif;
+
+@mixin inner($mw: 1000px, $sw: 88%) {
+    max-width: $mw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body {
+    color: $color-text;
+    font-size: 15px;
+    line-height: math.div(26, 15);
+    letter-spacing:#{math.div(20,1000)}em;
+    font-family: $font-family-base;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
+}
+
+// common
+// ----------------------------------
+
+.header {
+    margin-top: 50px;
+    margin-bottom: 80px;
+
+    &__inner {
+        @include inner;
+        display: grid;
+        grid-auto-flow: column;
+        justify-content: space-between;
+        text-align: center;
+        align-items: center;
+    }
+
+    &__logo {
+        font-size: 24px;
+        font-weight: bold;
+    }
+}
+
+.footer {
+    padding: 100px;
+    background-color: $color-bg;
+    text-align: right;
+
+    &__inner {
+        @include inner;
+    }
+
+    &__gnav {
+        margin-bottom: 40px;
+    }
+
+    &__copy {
+        font-weight: bold;
+    }
+}
+
+.gnav {
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    &__item {
+        margin-left: 30px;
+        font-weight: bold;
+
+        &--active {
+            color: $color-main;
+        }
+    }
+}
+
+.unit {
+    &__catch {
+        margin-bottom: 20px;
+        color: $color-main;
+        line-height: math.div(30, 18);
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    &__title {
+        margin-bottom: 40px;
+        color: $color-heading;
+        line-height: math.div(58, 48);
+        font-size: 48px;
+    }
+
+    :last-child {
+        margin-bottom: 0;
+    }
+
+    // 要素の中の一番最後の要素の下マージンを０にする
+}
+
+.card {
+    padding: 45px;
+    border: 1px #A3A3A3 solid;
+    border-radius: 20px;
+
+    &__content {
+        margin-bottom: 80px;
+    }
+
+    &__customer {
+        width: 230px;
+        display: grid;
+        grid-auto-flow: column;
+    }
+}
+
+.post {
+    &__content {
+        margin-top: 20px;
+    }
+}
+
+.btn {
+    margin-top: 60px;
+    display: block;
+    padding: 20px 0;
+    width: 200px;
+    color: #fff;
+    background-color: $color-accent;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.btn--org {
+    width: 300px;
+    margin-top: 40px;
+    background-color: $color-main;
+}
+
+// index.html
+// ----------------------------------
+.spaces {
+    padding-bottom: 120px;
+
+    &__inner {
+        @include inner;
+        display: grid;
+        grid-template-columns: 440fr 500fr;
+        column-gap: percentage(math.div(60, 1000));
+        align-items: center;
+    }
+}
+
+.reviews {
+    padding-bottom: 120px;
+
+    &__inner {
+        @include inner;
+    }
+
+    &__info {
+        margin-bottom: 40px;
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: percentage(math.div(60, 1000));
+        align-items: center;
+    }
+}
+
+// about.html
+// ----------------------------------
+.best {
+    padding-bottom: 120px;
+
+    &__inner {
+        @include inner;
+    }
+
+    &__info {
+        max-width: 600px;
+        margin-bottom: 60px;
+    }
+
+    &__posts {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: percentage(math.div(50, 1000));
+    }
+}
+
+.smart {
+    padding-bottom: 120px;
+
+    &__inner {
+        @include inner;
+        display: grid;
+        grid-template-columns: 500fr 440fr;
+        column-gap: percentage(math.div(60, 1000));
+        align-items: center;
+    }
+
+    &__pic {
+        order: 1;
+    }
+
+    &__info {
+        order: 2;
+    }
+}
