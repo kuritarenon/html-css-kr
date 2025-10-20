@@ -1,0 +1,251 @@
+@use "sass:math";
+
+$bs: (
+    "desktop": 640px,
+);
+
+$main-color: #000000;
+$sab-color: #2F2F2F;
+$accent-color: #E40465;
+$voice-bg: #F4F4F4;
+$card-border: #A3A3A3;
+
+$font-famly-base: "游ゴシック", "Yu Gothic", Helvetica, Arial, sans-serif;
+
+@mixin mq($b: desktop) {
+    @media (#{map-get($bs, $b)} <=width) {
+        @content;
+    }
+}
+
+@mixin inner($mw: 1000px, $w: percentage(math.div(560, 640))) {
+    max-width: $mw;
+    width: $w;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@mixin title-main($e) {
+    font-size: 32px;
+    line-height: math.div(54, 32);
+    font-weight: bold;
+    text-align: center;
+
+    &::before {
+        content: $e;
+        display: block;
+        margin-bottom: 20px;
+        font-size: 14px;
+        line-height: 1;
+    }
+
+    &::after {
+        content: "";
+        margin-bottom: 60px;
+        padding-top: 25px;
+        display: block;
+        border-bottom: 2px solid #E40465;
+        width: 100px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+body {
+    color: $main-color;
+    font-size: 14px;
+    line-height: math.div(24, 14);
+    letter-spacing: #{math.div(50, 1000)}em;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
+}
+
+.gn {
+    &__list {
+        display: grid;
+        grid-auto-flow: column;
+        column-gap: 30px;
+    }
+
+    &__ac {
+        color: $accent-color;
+    }
+}
+
+.post {
+    margin-top: 60px;
+    position: relative;
+
+    &__title {
+        margin-top: 30px;
+        font-size: 18px;
+        line-height: math.div(18, 31);
+        font-weight: bold;
+    }
+
+    &__text {
+        margin-top: 20px;
+    }
+
+    &__img--new {
+        position: relative
+    }
+
+    &__img--new::before {
+        content: "NEW";
+        color: #FFFFFF;
+        display: inline-block;
+        padding: 8px 15px;
+        font-size: 12px;
+        font-weight: bold;
+        position: absolute;
+        left: 15px;
+        bottom: 15px;
+        background-color: $accent-color;
+        border-radius: 20px;
+        z-index: 100;
+    }
+}
+
+.card {
+    padding: 45px;
+    background-color: #FFFFFF;
+    border: 1px solid $card-border;
+    border-radius: 20px;
+}
+
+.customer {
+    width: 230px;
+    margin-top: 40px;
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-between;
+    column-gap: 20px;
+}
+
+// ----------------------------------------------------------
+
+// header
+.header {
+    padding: 40px 0;
+
+    &__inner {
+        @include inner();
+        display: grid;
+        grid-auto-flow: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__logo {
+        color: $sab-color;
+        font-size: 24px;
+        line-height: math.div(29, 24);
+        letter-spacing: #{math.div(100, 1000)}em;
+        font-weight: bold;
+        font-family: Helvetica, Arial, sans-serif;
+    }
+}
+
+// mainvisial
+.mainvisial {
+    margin-bottom: 80px;
+
+    &__inner {
+        @include inner();
+    }
+}
+
+// philosophy
+
+.philosophy {
+
+    margin-bottom: 120px;
+
+    &__inner {
+        @include inner();
+
+    }
+
+    &__text {
+        display: grid;
+        row-gap: 60px;
+        text-align: center;
+        word-break: keep-all;
+    }
+
+    &__title {
+        @include title-main("PHILOSOPHY");
+    }
+}
+
+// works
+.works {
+    margin-bottom: 120px;
+
+    &__inner {
+        @include inner();
+    }
+
+    &__title {
+        @include title-main("WORKS");
+    }
+
+    &__list {
+        @include mq() {
+            display: grid;
+            grid-auto-flow: column;
+            justify-content: space-between;
+            column-gap: 80px;
+        }
+    }
+}
+
+// voice
+.voice {
+    padding-top: 80px;
+    padding-bottom: 120px;
+    background-color: $voice-bg;
+
+    &__inner {
+        @include inner();
+    }
+
+    &__title {
+        @include title-main("VOICE");
+    }
+
+    &__list {
+        display: grid;
+        row-gap: 60px;
+
+        @include mq() {
+            display: grid;
+            grid-auto-flow: column;
+            justify-content: space-between;
+            column-gap: 80px;
+        }
+    }
+}
+
+// footer
+.footer {
+    padding: 80px 0;
+    background-color: $sab-color;
+    text-align: center;
+
+    &__inner {
+        @include inner();
+    }
+
+    &__copy {
+        color: #FFFFFF;
+        font-size: 12px;
+        line-height: math.div(12, 20);
+        font-weight: bold;
+    }
+}

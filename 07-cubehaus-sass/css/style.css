@@ -1,0 +1,250 @@
+body {
+  color: #000000;
+  font-size: 14px;
+  line-height: 1.7142857143;
+  letter-spacing: 0.05em;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+.gn__list {
+  display: grid;
+  grid-auto-flow: column;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
+}
+.gn__ac {
+  color: #E40465;
+}
+
+.post {
+  margin-top: 60px;
+  position: relative;
+}
+.post__title {
+  margin-top: 30px;
+  font-size: 18px;
+  line-height: 0.5806451613;
+  font-weight: bold;
+}
+.post__text {
+  margin-top: 20px;
+}
+.post__img--new {
+  position: relative;
+}
+.post__img--new::before {
+  content: "NEW";
+  color: #FFFFFF;
+  display: inline-block;
+  padding: 8px 15px;
+  font-size: 12px;
+  font-weight: bold;
+  position: absolute;
+  left: 15px;
+  bottom: 15px;
+  background-color: #E40465;
+  border-radius: 20px;
+  z-index: 100;
+}
+
+.card {
+  padding: 45px;
+  background-color: #FFFFFF;
+  border: 1px solid #A3A3A3;
+  border-radius: 20px;
+}
+
+.customer {
+  width: 230px;
+  margin-top: 40px;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+}
+
+.header {
+  padding: 40px 0;
+}
+.header__inner {
+  max-width: 1000px;
+  width: 87.5%;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__logo {
+  color: #2F2F2F;
+  font-size: 24px;
+  line-height: 1.2083333333;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.mainvisial {
+  margin-bottom: 80px;
+}
+.mainvisial__inner {
+  max-width: 1000px;
+  width: 87.5%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.philosophy {
+  margin-bottom: 120px;
+}
+.philosophy__inner {
+  max-width: 1000px;
+  width: 87.5%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.philosophy__text {
+  display: grid;
+  row-gap: 60px;
+  text-align: center;
+  word-break: keep-all;
+}
+.philosophy__title {
+  font-size: 32px;
+  line-height: 1.6875;
+  font-weight: bold;
+  text-align: center;
+}
+.philosophy__title::before {
+  content: "PHILOSOPHY";
+  display: block;
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 1;
+}
+.philosophy__title::after {
+  content: "";
+  margin-bottom: 60px;
+  padding-top: 25px;
+  display: block;
+  border-bottom: 2px solid #E40465;
+  width: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.works {
+  margin-bottom: 120px;
+}
+.works__inner {
+  max-width: 1000px;
+  width: 87.5%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.works__title {
+  font-size: 32px;
+  line-height: 1.6875;
+  font-weight: bold;
+  text-align: center;
+}
+.works__title::before {
+  content: "WORKS";
+  display: block;
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 1;
+}
+.works__title::after {
+  content: "";
+  margin-bottom: 60px;
+  padding-top: 25px;
+  display: block;
+  border-bottom: 2px solid #E40465;
+  width: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (640px <= width) {
+  .works__list {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-between;
+    -moz-column-gap: 80px;
+         column-gap: 80px;
+  }
+}
+
+.voice {
+  padding-top: 80px;
+  padding-bottom: 120px;
+  background-color: #F4F4F4;
+}
+.voice__inner {
+  max-width: 1000px;
+  width: 87.5%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.voice__title {
+  font-size: 32px;
+  line-height: 1.6875;
+  font-weight: bold;
+  text-align: center;
+}
+.voice__title::before {
+  content: "VOICE";
+  display: block;
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 1;
+}
+.voice__title::after {
+  content: "";
+  margin-bottom: 60px;
+  padding-top: 25px;
+  display: block;
+  border-bottom: 2px solid #E40465;
+  width: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.voice__list {
+  display: grid;
+  row-gap: 60px;
+}
+@media (640px <= width) {
+  .voice__list {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-between;
+    -moz-column-gap: 80px;
+         column-gap: 80px;
+  }
+}
+
+.footer {
+  padding: 80px 0;
+  background-color: #2F2F2F;
+  text-align: center;
+}
+.footer__inner {
+  max-width: 1000px;
+  width: 87.5%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.footer__copy {
+  color: #FFFFFF;
+  font-size: 12px;
+  line-height: 0.6;
+  font-weight: bold;
+}
+/*# sourceMappingURL=style.css.map */
