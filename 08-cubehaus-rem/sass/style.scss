@@ -99,7 +99,8 @@ $font-family-mincho: "Times New Roman", Times, "Hiragino Mincho ProN", "Yu Minch
 // --- Breakpoints ---
 $breakpoints: (
     "tablet": 768px,
-    "desktop": 640px
+    "desktop": 640px,
+    "philosophy":500px,
 );
 
 
@@ -144,6 +145,34 @@ $breakpoints: (
     margin-right: auto;
 }
 
+@mixin title-main($t: "") {
+    margin-bottom: rem(60);
+    font-size: rem(32);
+    font-weight: bold;
+    line-height: math.div(54, 32);
+    text-align: center;
+
+    &::before {
+        content: $t;
+        display: block;
+        margin-bottom: $space-m;
+        font-size: rem(14);
+        font-weight: normal;
+        line-height: 1;
+        text-transform: uppercase;
+    }
+
+    &::after {
+        content: "";
+        display: block;
+        width: rem(100);
+        margin: $space-l auto 0;
+        border-bottom: 2px solid $color-main;
+    }
+}
+
+// =================================================================
+//  common//=================================================================
 body {
     color: $color-text;
     font-size: rem(14);
@@ -158,8 +187,6 @@ img {
     vertical-align: bottom;
 }
 
-// =================================================================
-//  common//=================================================================
 .header {
     padding: $space-xxl 0;
 
@@ -196,6 +223,46 @@ img {
     }
 }
 
+.post {
+    &__pic {
+        position: relative;
+
+        .post--new &::after {
+            content: "NEW";
+            display: block;
+            color: #FFFFFF;
+            background-color: $color-main;
+            position: absolute;
+            left: rem(15);
+            bottom: rem(15);
+        }
+    }
+}
+
+.card {
+    display: grid;
+    grid-template-rows: subgrid; // 内包する要素の高さを揃えたい
+    grid-row: span 2; // 内包する要素の数を指定する
+    row-gap: $space-xxl;
+    padding: $space-xxxl $space-xxl;
+    background-color: #FFFFFF;
+    border: 1px solid #a3a3a3;
+    border-radius: 20px;
+}
+
+.profile {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: start;
+    column-gap: $space-m;
+    align-items: center;
+    // align-self: end;
+
+    &__term {
+        font-weight: bold;
+    }
+}
+
 .footer {
     padding: rem(80) 0;
     color: #FFFFFF;
@@ -214,4 +281,91 @@ img {
 }
 
 // =================================================================
-//  index// =================================================================
+//  index// ==============================================================
+
+.mainvicial {
+    padding-bottom: rem(80);
+
+    &__inner {
+        @include inner();
+    }
+}
+
+.philosophy {
+    padding-bottom: rem(120);
+
+    &__inner {
+        @include inner();
+    }
+
+    &__title {
+        @include title-main("philosophy");
+    }
+
+    &__text {
+        max-width: rem(780);
+        margin: auto;
+        display: grid;
+        row-gap: rem(60);
+        text-align: center;
+
+        p {
+            line-height: math.div(34, 14);
+            overflow-wrap: anywhere;
+            // 長い英単語（URL,メールアドレス）の途中で改行する
+
+            @include mq(philosophy) {
+                word-break: keep-all;
+                // 文脈の途中で改行しない
+            }
+        }
+    }
+}
+
+.works {
+    padding-bottom: rem(120);
+
+    &__inner {
+        @include inner();
+    }
+
+    &__title {
+        @include title-main("works");
+    }
+
+    &__list {
+        display: grid;
+        row-gap: rem(60);
+
+        @include mq() {
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: rem(80);
+        }
+    }
+}
+
+.voice {
+    padding: rem(80) 0 rem(120);
+    background-color: $color-bg;
+
+    &__inner {
+        @include inner();
+    }
+
+    &__title {
+        @include title-main("voice");
+    }
+
+    &__list {
+        display: grid;
+        row-gap: rem(60);
+
+        @include mq() {
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: rem(80);
+        }
+
+    }
+
+
+}
